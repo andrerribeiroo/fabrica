@@ -1,0 +1,94 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Andre",
+      "email": "docemel@sodoce.com.br",
+      "senha": "brigadeiro123"
+    }
+    ],
+    "produtos": [
+    {
+      "id": "1",
+      "nome": "Shampoo Cr7",
+      "descricao": "Melhor shampoo do mundo",
+      "preco": 7.77,
+      "categoria": "Saúde e beleza",
+      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAiGeCC3KhBPz8xa_dcPdPor2D__CuueBzeA&s"
+    },
+    {
+      "nome": "Dolly Guaraná",
+      "descricao": "Bom para beber",
+      "categoria": "Alimentos",
+      "preco": "5.99",
+      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBZMRU96Mx3KWq03iGSKYCtlF5ZfrTQr0fw&s",
+      "id": "2"
+    },
+    {
+      "id": "aa60",
+      "nome": "Monitor",
+      "descricao": "144hz",
+      "categoria": "Brinquedos",
+      "preco": "670",
+      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJFbZhq582mJr1hQ8MN_i-R8lnKr1Dma3xow&s"
+    },
+    {
+      "id": "9032",
+      "nome": "Skript.gg",
+      "descricao": "hack menu",
+      "categoria": "Esporte",
+      "preco": "150",
+      "imagemUrl": "https://i.ytimg.com/vi/4ktxTWZ7TSY/maxresdefault.jpg"
+    },
+    {
+      "id": "0ba6",
+      "nome": "aimlock trem",
+      "descricao": "hack para free fire",
+      "categoria": "Alimentos",
+      "preco": "50000000",
+      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD0WzT8-8AWrHeA3-_dfag7vl6WYm8wpZLFA&s"
+    },
+    {
+      "nome": "Angelo Bellei",
+      "descricao": "the best cool in the world",
+      "categoria": "Saúde",
+      "preco": "1000000000000",
+      "imagemUrl": "https://angelobelelli.blog/img/minhaFoto.jpeg",
+      "id": "7ffb"
+    },
+    {
+      "id": "957d",
+      "nome": "Pedro Gaybryel",
+      "descricao": "the best player in the world",
+      "categoria": "Esporte",
+      "preco": "-1",
+      "imagemUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEG78hxAqSiXw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1714479109310?e=2147483647&v=beta&t=28iqqBwbdjSSdW0dn2MqyIwI7QHMM5HQyrXwy1LJREs"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "nome": "Bebidas"
+    },
+    {
+      "id": "2",
+      "nome": "Alimentos"
+    },
+    {
+      "id": "3",
+      "nome": "Saúde"
+    },
+    {
+      "id": "4",
+      "nome": "Higiene"
+    },
+    {
+      "id": "5",
+      "nome": "Esporte"
+    },
+    {
+      "id": "6",
+      "nome": "Brinquedos"
+    }
+  ]
+}
