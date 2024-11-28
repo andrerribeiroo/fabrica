@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import NavBarra from "../components/NavBarra";
 
 // Url da api
-const url = "http://localhost:5000/produtos"
+const url = "http://localhost:5000/produtos";
 
 // Estado inicial do formulário
 
@@ -30,7 +30,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ height: "220vh", background: "#ffcbdb"}}>
+    <div style={{ height: "220vh", background: "#ffcbdb" }}>
       <NavBarra />
       <h1 style={{ margin: "50px", color: "black" }}>Bolos</h1>
       <div className="container">
@@ -40,9 +40,8 @@ const Home = () => {
               key={prod.id}
               id={prod.id}
               nome={prod.nome}
-              descricao={prod.descricao}
               preco={prod.preco}
-              Tipo={prod.Tipo}
+              tipo={prod.tipo}
               imagemUrl={prod.imagemUrl}
             />
           ))}
@@ -53,4 +52,3 @@ const Home = () => {
 };
 
 export default Home;
-

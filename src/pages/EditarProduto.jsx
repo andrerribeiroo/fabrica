@@ -1,4 +1,4 @@
-// importando components
+// Importando components
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
@@ -16,18 +16,18 @@ import { useNavigate } from "react-router-dom";
 // Importação de componentes
 import NavBarra from "../components/NavBarra";
 
-const url = "http://localhost:5000/tipo";
-const url2 = "http://localhost:5000/produtos";
+const urlTipo = "http://localhost:5000/tipo";
+const urlProdutos = "http://localhost:5000/produtos";
 
-const CadastroProduto = () => {
-  const [categoriaC, setCategoriaC] = useState([]);
+const EditarProduto = () => {
+  const [tipoC, setTipos] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const req = await fetch(url);
-        const categoriaC = await req.json();
-        setCategoriaC(categoriaC);
+        const req = await fetch(urlTipo);
+        const tipoC = await req.json();
+        setTipos(tipoC );
       } catch (erro) {
         console.log(erro.message);
       }
@@ -35,7 +35,6 @@ const CadastroProduto = () => {
     fetchData();
   }, []);
 
-  //   Link produto sem imagem
   const linkImagem =
     "https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png";
 
@@ -48,53 +47,57 @@ const CadastroProduto = () => {
   const [alertMessagem, setAlertMessage] = useState("");
   const [alertVariant, setAlertVariant] = useState("danger");
 
-  // Criando o navigate
   const navigate = useNavigate();
 
-  // Função pra lidar com o recarregamento da página
+  // Obter o ID do produto pela URL
+  const params = window.location.pathname.split("/");
+  const idProd = params[params.length - 1];
+
+  useEffect(() => {
+    async function fetchProduto() {
+      try {
+        const req = await fetch(`${urlProdutos}/${idProd}`);
+        const produto = await req.json();
+        setNome(produto.nome);
+        setPreco(produto.preco);
+        setTipo(produto.tipo);
+        setImagemUrl(produto.imagemUrl || "");
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+    fetchProduto();
+  }, [idProd]);
+
   const handleSubmit = async (e) => {
-    // faz com que a pagina não recarregue
     e.preventDefault();
 
-    //faça com que quando eu cadastrar um produto, todos os requisitos volte do 0
-    setNome("");
-    setPreco("");
-    setTipo("");
-    setImagemUrl("");
+    if (nome !== "" && preco !== "") {
+      const produto = { nome, preco, tipo, imagemUrl };
 
-    // if de alerta com textos
-    if (nome != "") {
-      if (preco != "") {
-        const produto = { nome, tipo, preco, imagemUrl };
-        console.log(produto);
+      try {
+        const req = await fetch(`${urlProdutos}/${idProd}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(produto),
+        });
 
-        try {
-          const req = await fetch(url2, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(produto),
-          });
+        const res = await req.json();
+        console.log(res);
 
-          const res = await req.json();
-          console.log(res);
-
-          setAlertClass("mb-3 mt-2");
-          setAlertVariant("success");
-          setAlertMessage("Cadastro efetuado com sucesso");
-          alert("Produto cadastrado com sucesso");
-          setTimeout(() => {
-            navigate("/home");
-          }, 2000);
-        } catch (error) {
-          console.log(error.message);
-        }
-      } else {
         setAlertClass("mb-3 mt-2");
-        setAlertMessage("O campo preço não pode ser vazio");
+        setAlertVariant("success");
+        setAlertMessage("Produto editado com sucesso");
+        alert("Produto editado com sucesso");
+        setTimeout(() => {
+          navigate("/home");
+        }, 2000);
+      } catch (error) {
+        console.log(error.message);
       }
     } else {
       setAlertClass("mb-3 mt-2");
-      setAlertMessage("O campo nome não pode ser vazio");
+      setAlertMessage("Todos os campos obrigatórios devem ser preenchidos");
     }
   };
 
@@ -102,86 +105,75 @@ const CadastroProduto = () => {
     <div style={{ background: "#ffcbdb" }}>
       <NavBarra />
       <Container>
-        <h1 style={{ margin: "50px" }}>Cadastrar Produtos</h1>
+        <h1 style={{ margin: "50px" }}>Editar Produto</h1>
 
         <form onSubmit={handleSubmit} className="mt-3">
           <Row className="mb-3">
             <Col xs={6}>
-              {/* Caixinha de Nome */}
+              {/* Nome */}
               <FloatingLabel
                 controlId="floatingInputNome"
                 label="Nome"
                 className="mb-3"
               >
                 <Form.Control
-                  type="Text"
-                  placeholder="Digite seu nome do produto"
+                  type="text"
+                  placeholder="Digite o nome do produto"
                   value={nome}
-                  onChange={(e) => {
-                    setNome(e.target.value);
-                  }}
+                  onChange={(e) => setNome(e.target.value)}
                 />
               </FloatingLabel>
 
-              {/* Select tipo */}
+              {/* Tipo */}
               <Form.Group as={Col} controlId="formGridTipo">
-                <Form.Label>Tipo de produto</Form.Label>
+                <Form.Label>Tipo</Form.Label>
                 <Form.Select
                   value={tipo}
-                  onChange={(e) => {setTipo(e.target.value);}}>
-                    <option value="">Selecione o tipo</option>
-                  {categoriaC.map((cat) => (
-                    <option key={cat.id} value={cat.nome}>
-                      {cat.nome}
+                  onChange={(e) => setTipo(e.target.value)}
+                >
+                  <option value="">Selecione um tipo</option>
+                  {tipoC.map((t) => (
+                    <option key={t.id} value={t.nome}>
+                      {t.nome}
                     </option>
                   ))}
                 </Form.Select>
               </Form.Group>
 
-              {/* Caixinha de Preço */}
-              <Form.Label style={{ margin: "20px" }}>
-                {" "}
-                Preço do produto{" "}
-              </Form.Label>
-
+              {/* Preço */}
+              <Form.Label style={{ margin: "20px" }}>Preço</Form.Label>
               <FloatingLabel
                 controlId="floatingInputPreco"
-                label="Preco"
+                label="Preço"
                 className="mb-3"
               >
                 <Form.Control
                   type="number"
-                  step="0.05"
-                  placeholder="Digite o Preco do produto"
+                  step="0.01"
+                  placeholder="Digite o preço do produto"
                   value={preco}
-                  onChange={(e) => {
-                    setPreco(e.target.value);
-                  }}
+                  onChange={(e) => setPreco(e.target.value)}
                 />
               </FloatingLabel>
             </Col>
 
             <Col xs={6}>
-              {/* Caixinha de Imagem*/}
-
+              {/* Imagem */}
               <Form.Group controlId="formFileLg" className="mb-3">
                 <FloatingLabel
                   controlId="floatingInputImagem"
-                  label="Envie o link da IMAGEM !"
+                  label="Link da Imagem"
                   className="mb-3"
                 >
                   <Form.Control
-                    type="Text"
-                    placeholder="Envie o link da IMAGEM do produto"
+                    type="text"
+                    placeholder="Digite o link da imagem"
                     value={imagemUrl}
-                    onChange={(e) => {
-                      setImagemUrl(e.target.value);
-                    }}
+                    onChange={(e) => setImagemUrl(e.target.value)}
                   />
                 </FloatingLabel>
-
                 <Image
-                  src={imagemUrl == "" ? linkImagem : imagemUrl}
+                  src={imagemUrl === "" ? linkImagem : imagemUrl}
                   rounded
                   width={300}
                   height={300}
@@ -194,19 +186,14 @@ const CadastroProduto = () => {
             </Col>
           </Row>
 
-          {/* Alerta caso haja erro */}
+          {/* Alerta */}
           <Alert className={alertClass} variant={alertVariant}>
             {alertMessagem}
           </Alert>
 
-          {/* Botão para enviar formulário */}
-          <Button
-            variant="success"
-            size="lg"
-            type="submit"
-            style={{ marginBottom: "253px" }}
-          >
-            Cadastrar
+          {/* Botão */}
+          <Button variant="success" size="lg" type="submit" style={{ marginBottom: "253px" }}>
+            Editar Produto
           </Button>
         </form>
       </Container>
@@ -214,4 +201,4 @@ const CadastroProduto = () => {
   );
 };
 
-export default CadastroProduto;
+export default EditarProduto;

@@ -6,66 +6,66 @@
       "email": "docemel@sodoce.com.br",
       "senha": "brigadeiro123"
     }
-    ],
-    "produtos": [
+  ],
+  "produtos": [
     {
-      "id": "1",
-      "nome": "Shampoo Cr7",
-      "descricao": "Melhor shampoo do mundo",
-      "preco": 7.77,
-      "Tipo": "Bebida",
-      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAiGeCC3KhBPz8xa_dcPdPor2D__CuueBzeA&s"
+      "nome": "Bolo de cenoura",
+      "preco": "33",
+      "tipo": "Bolo",
+      "imagemUrl": "https://static.itdg.com.br/images/360-240/d290bc79bcad112ee9095604e45eb262/365326-original.jpg",
+      "id": "bcf4"
     },
     {
-      "nome": "Dolly Guaraná",
-      "descricao": "Bom para beber",
-      "Tipo": "Alimentos",
-      "preco": "5.99",
-      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBZMRU96Mx3KWq03iGSKYCtlF5ZfrTQr0fw&s",
-      "id": "2"
+      "nome": "Bolo de chocolate",
+      "preco": "100000000000",
+      "tipo": "Bolo",
+      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDnZYRrzdjh8SL2znlxsamM4xyPRmXcWgM3g&s",
+      "id": "fda8"
     },
     {
-      "id": "aa60",
-      "nome": "Doce",
-      "descricao": "144hz",
-      "Tipo": "Brinquedos",
-      "preco": "670",
-      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJFbZhq582mJr1hQ8MN_i-R8lnKr1Dma3xow&s"
+      "nome": "Bolo de laranja",
+      "preco": "120",
+      "tipo": "Bolo",
+      "imagemUrl": "https://static.itdg.com.br/images/640-440/6ad512da7842a03c4e0a96c97f6fb5fb/323851-original.jpg",
+      "id": "c452"
     },
     {
-      "id": "9032",
-      "nome": "Skript.gg",
-      "descricao": "hack menu",
-      "Tipo": "Bebida",
-      "preco": "150",
-      "imagemUrl": "https://i.ytimg.com/vi/4ktxTWZ7TSY/maxresdefault.jpg"
+      "nome": "Bolo formigueiro",
+      "preco": "44",
+      "tipo": "Bolo",
+      "imagemUrl": "https://recipesblob.oetker.com.br/assets/f51a87ec51c742239a98481f2aa22c78/1272x764/bolo-formigueiro-de-iogurte.jpg",
+      "id": "9ea5"
     },
     {
-      "id": "0ba6",
-      "nome": "aimlock trem",
-      "descricao": "hack para free fire",
-      "Tipo": "Doce",
-      "preco": "50000000",
-      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD0WzT8-8AWrHeA3-_dfag7vl6WYm8wpZLFA&s"
+      "nome": "Bolo uva",
+      "preco": "99999999999999999999999999999",
+      "tipo": "Bolo",
+      "imagemUrl": "https://i.ytimg.com/vi/4G8sm4rfXmU/sddefault.jpg",
+      "id": "c338"
     },
     {
-      "nome": "Angelo Bellei",
-      "descricao": "the best cool in the world",
-      "Tipo": "Torta",
-      "preco": "1000000000000",
-      "imagemUrl": "https://angelobelelli.blog/img/minhaFoto.jpeg",
-      "id": "7ffb"
+      "nome": "Bolo de tijolo",
+      "preco": "12",
+      "tipo": "Bolo",
+      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBU3Z6PDiUcyPRIhHtKA17ceok1gdYbJ-6Pw&s",
+      "id": "5e8d"
     },
     {
-      "id": "957d",
-      "nome": "Pedro Gaybryel",
-      "descricao": "the best player in the world",
-      "Tipo": "Bolo",
-      "preco": "-1",
-      "imagemUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEG78hxAqSiXw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1714479109310?e=2147483647&v=beta&t=28iqqBwbdjSSdW0dn2MqyIwI7QHMM5HQyrXwy1LJREs"
+      "nome": "Bolo de cenoura",
+      "preco": "11",
+      "tipo": "Bolo",
+      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIjNigTtPOin2C80n_PEGQS_PA_1xHKuOM3w&s",
+      "id": "045f"
+    },
+    {
+      "id": "9081",
+      "nome": "Brigadeiro",
+      "tipo": "Doce",
+      "preco": "10",
+      "imagemUrl": "https://saborecia.com.br/wp-content/uploads/2020/08/MG_4421-scaled.jpg"
     }
   ],
-  "Tipo": [
+  "tipo": [
     {
       "id": "1",
       "nome": "Bolo"
