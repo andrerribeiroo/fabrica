@@ -103,7 +103,7 @@ const Login = () => {
     >
       <Container
         style={{
-          background: "white",
+          background: "	#CDCDCD",
           padding: "0",
           borderRadius: "10px",
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
@@ -184,12 +184,22 @@ const Login = () => {
             {/* Botão Entrar */}
 
             <Button
-              style={{ marginTop: "20px", width: "40%" }}
+              style={{ marginTop: "20px", margin: "20px", width: "40%" }}
               variant="success"
               type="submit"
             >
               {" "}
               Entrar na Conta{" "}
+            </Button>
+
+            <Button
+              style={{ marginTop: "20px", margin: "20px", width: "40%" }}
+              variant="secondary"
+              type="submit"
+              href="/"
+            >
+              {" "}
+              Criar Conta{" "}
             </Button>
           </Form>
         </div>

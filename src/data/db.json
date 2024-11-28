@@ -5,29 +5,33 @@
       "nome": "Andre",
       "email": "docemel@sodoce.com.br",
       "senha": "brigadeiro123"
+    },
+    {
+      "id": "e60a",
+      "nome": "maria",
+      "email": "maria@gmail.com",
+      "senha": "maria"
+    },
+    {
+      "id": "3605",
+      "nome": "matheus",
+      "email": "matheus@gmail.com",
+      "senha": "matheus"
+    },
+    {
+      "id": "ffe5",
+      "nome": "angelo",
+      "email": "angelo@gmail.com",
+      "senha": "angelo"
     }
   ],
   "produtos": [
     {
-      "nome": "Bolo de cenoura",
+      "nome": "Doce de leite",
       "preco": "33",
       "tipo": "Bolo",
-      "imagemUrl": "https://static.itdg.com.br/images/360-240/d290bc79bcad112ee9095604e45eb262/365326-original.jpg",
+      "imagemUrl": "https://i.ytimg.com/vi/WTId9SgD3FI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCb-Ww82pj4n_h32WWd8lRInpXgRg",
       "id": "bcf4"
-    },
-    {
-      "nome": "Bolo de chocolate",
-      "preco": "100000000000",
-      "tipo": "Bolo",
-      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDnZYRrzdjh8SL2znlxsamM4xyPRmXcWgM3g&s",
-      "id": "fda8"
-    },
-    {
-      "nome": "Bolo formigueiro",
-      "preco": "44",
-      "tipo": "Bolo",
-      "imagemUrl": "https://recipesblob.oetker.com.br/assets/f51a87ec51c742239a98481f2aa22c78/1272x764/bolo-formigueiro-de-iogurte.jpg",
-      "id": "9ea5"
     },
     {
       "nome": "Bolo uva",
@@ -37,10 +41,10 @@
       "id": "c338"
     },
     {
-      "nome": "Bolo de tijolo",
-      "preco": "12",
+      "nome": "Bolo da Frozen",
+      "preco": "777",
       "tipo": "Bolo",
-      "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBU3Z6PDiUcyPRIhHtKA17ceok1gdYbJ-6Pw&s",
+      "imagemUrl": "https://i.pinimg.com/236x/94/e8/e9/94e8e9b5a8fb9dbaf7b40a640cf3e4d0.jpg",
       "id": "5e8d"
     },
     {
@@ -51,11 +55,25 @@
       "id": "045f"
     },
     {
-      "id": "9081",
       "nome": "Brigadeiro",
-      "tipo": "Doce",
       "preco": "10",
-      "imagemUrl": "https://saborecia.com.br/wp-content/uploads/2020/08/MG_4421-scaled.jpg"
+      "tipo": "Doce",
+      "imagemUrl": "https://saborecia.com.br/wp-content/uploads/2020/08/MG_4421-scaled.jpg",
+      "id": "9081"
+    },
+    {
+      "id": "9931",
+      "nome": "Torta holandesa",
+      "tipo": "Torta",
+      "preco": "51",
+      "imagemUrl": "https://static.itdg.com.br/images/1200-675/d67039c3ae791ed32e8d2912251c9495/312799-original-1-2-.jpg"
+    },
+    {
+      "id": "1520",
+      "nome": "Torta Mousse de Morango",
+      "tipo": "Torta",
+      "preco": "41",
+      "imagemUrl": "https://recipesblob.oetker.com.br/assets/9c6176b2e8cb4edd827495f2b7a0124d/1272x764/torta-mousse-de-morango.webp"
     }
   ],
   "tipo": [

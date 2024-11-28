@@ -16,18 +16,24 @@ import { useNavigate } from "react-router-dom";
 // Importação de componentes
 import NavBarra from "../components/NavBarra";
 
+// URL da API de tipos e produtos
 const urlTipo = "http://localhost:5000/tipo";
 const urlProdutos = "http://localhost:5000/produtos";
 
 const EditarProduto = () => {
+  // Estado para armazenar os tipos de produtos
   const [tipoC, setTipos] = useState([]);
 
+  // Estado para armazenar o termo de busca
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Busca os tipos de produtos da API
   useEffect(() => {
     async function fetchData() {
       try {
         const req = await fetch(urlTipo);
         const tipoC = await req.json();
-        setTipos(tipoC );
+        setTipos(tipoC);
       } catch (erro) {
         console.log(erro.message);
       }
@@ -35,14 +41,17 @@ const EditarProduto = () => {
     fetchData();
   }, []);
 
+  // Link padrão para imagens sem URL definida
   const linkImagem =
     "https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png";
 
+  // Estados para armazenar os dados do produto
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
   const [tipo, setTipo] = useState("");
   const [imagemUrl, setImagemUrl] = useState("");
 
+  // Estados para exibir alertas
   const [alertClass, setAlertClass] = useState("mb-3 d-none");
   const [alertMessagem, setAlertMessage] = useState("");
   const [alertVariant, setAlertVariant] = useState("danger");
@@ -53,6 +62,7 @@ const EditarProduto = () => {
   const params = window.location.pathname.split("/");
   const idProd = params[params.length - 1];
 
+  // Busca os dados do produto a ser editado da API
   useEffect(() => {
     async function fetchProduto() {
       try {
@@ -69,6 +79,7 @@ const EditarProduto = () => {
     fetchProduto();
   }, [idProd]);
 
+  // Função para enviar os dados atualizados para a API
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -102,15 +113,16 @@ const EditarProduto = () => {
   };
 
   return (
-    <div style={{minHeight: "100vh", background: "#ffcbdb" }}>
-      <NavBarra />
+    <div style={{ minHeight: "100vh", background: "#ffcbdb" }}>
+      {/* Barra de navegação com a funcionalidade de pesquisa */}
+      <NavBarra setSearchTerm={setSearchTerm} />
       <Container>
         <h1 style={{ margin: "50px" }}>Editar Produto</h1>
 
         <form onSubmit={handleSubmit} className="mt-3">
           <Row className="mb-3">
             <Col xs={6}>
-              {/* Nome */}
+              {/* Campo de Nome */}
               <FloatingLabel
                 controlId="floatingInputNome"
                 label="Nome"
@@ -124,7 +136,7 @@ const EditarProduto = () => {
                 />
               </FloatingLabel>
 
-              {/* Tipo */}
+              {/* Campo de Tipo */}
               <Form.Group as={Col} controlId="formGridTipo">
                 <Form.Label>Tipo</Form.Label>
                 <Form.Select
@@ -140,7 +152,7 @@ const EditarProduto = () => {
                 </Form.Select>
               </Form.Group>
 
-              {/* Preço */}
+              {/* Campo de Preço */}
               <Form.Label style={{ margin: "20px" }}>Preço</Form.Label>
               <FloatingLabel
                 controlId="floatingInputPreco"
@@ -158,7 +170,7 @@ const EditarProduto = () => {
             </Col>
 
             <Col xs={6}>
-              {/* Imagem */}
+              {/* Campo de Imagem */}
               <Form.Group controlId="formFileLg" className="mb-3">
                 <FloatingLabel
                   controlId="floatingInputImagem"
@@ -186,13 +198,18 @@ const EditarProduto = () => {
             </Col>
           </Row>
 
-          {/* Alerta */}
+          {/* Alerta de Feedback */}
           <Alert className={alertClass} variant={alertVariant}>
             {alertMessagem}
           </Alert>
 
-          {/* Botão */}
-          <Button variant="success" size="lg" type="submit" style={{ marginBottom: "253px" }}>
+          {/* Botão de Enviar */}
+          <Button
+            variant="success"
+            size="lg"
+            type="submit"
+            style={{ marginBottom: "253px" }}
+          >
             Editar Produto
           </Button>
         </form>

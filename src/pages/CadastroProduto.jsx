@@ -99,10 +99,28 @@ const CadastroProduto = () => {
   };
 
   return (
-    <div style={{minHeight: "100vh", background: "#ffcbdb" }}>
+    <div style={{ minHeight: "100vh", background: "#ffcbdb" }}>
       <NavBarra />
       <Container>
         <h1 style={{ margin: "50px" }}>Cadastrar Produtos</h1>
+
+        {/* Função de pesquisa (com exemplo de integração na navBarra) */}
+        {/* 
+          <Form className="d-flex mb-3">
+            <Form.Control
+              type="search"
+              placeholder="Pesquisar produto"
+              className="me-2"
+              aria-label="Search"
+              // Adicione um estado e função onChange para capturar a pesquisa
+              onChange={(e) => {
+                const pesquisa = e.target.value;
+                // Lógica para filtrar resultados ou buscar produtos
+              }}
+            />
+            <Button variant="outline-success">Buscar</Button>
+          </Form> 
+        */}
 
         <form onSubmit={handleSubmit} className="mt-3">
           <Row className="mb-3">
@@ -128,8 +146,11 @@ const CadastroProduto = () => {
                 <Form.Label>Tipo de produto</Form.Label>
                 <Form.Select
                   value={tipo}
-                  onChange={(e) => {setTipo(e.target.value);}}>
-                    <option value="">Selecione o tipo</option>
+                  onChange={(e) => {
+                    setTipo(e.target.value);
+                  }}
+                >
+                  <option value="">Selecione o tipo</option>
                   {categoriaC.map((cat) => (
                     <option key={cat.id} value={cat.nome}>
                       {cat.nome}

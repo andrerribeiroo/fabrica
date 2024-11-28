@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import CadastroProduto from './pages/CadastroProduto';
 import EditarProduto from './pages/EditarProduto';
 import ResultadosPesquisa from "./pages/ResultadosPesquisa";
+import CadastroUsuario from "./pages/CadastroUsuario";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -15,7 +16,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />}/>
+          <Route path="/" element={<CadastroUsuario />} />
           <Route path="/login" element={<Login />}/>  
           <Route path="/home" element={<Home />}/>
           <Route path="/produtos" element={<ResultadosPesquisa />} />

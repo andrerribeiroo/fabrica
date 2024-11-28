@@ -35,7 +35,7 @@ const Home = () => {
   }, [searchTerm, cads]);
 
   return (
-    <div style={{ height: "220vh", background: "#ffcbdb" }}>
+    <div style={{ height: "250vh", background: "#ffcbdb" }}>
       <NavBarra setSearchTerm={setSearchTerm} />
       <h1 style={{ margin: "50px", color: "black" }}>Bolos</h1>
       <div className="container">
