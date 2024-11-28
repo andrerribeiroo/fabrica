@@ -1,41 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CardProduto from "../components/CardProduto";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState, useEffect } from "react";
-
-// Importação de componentes
 import NavBarra from "../components/NavBarra";
 
-// Url da api
+// URL da API
 const url = "http://localhost:5000/produtos";
 
-// Estado inicial do formulário
-
 const Home = () => {
-  //Lista com produtos
-  const [cads, setCads] = useState([]);
+  const [cads, setCads] = useState([]); // Lista de produtos
+  const [searchTerm, setSearchTerm] = useState(""); // Termo de pesquisa
+  const [filteredCads, setFilteredCads] = useState([]); // Produtos filtrados
 
-  //UseEffect pra puxar os dados da api
+  // Carregar os produtos da API
   useEffect(() => {
     async function fetchData() {
       try {
-        const req = await fetch(url);
-        const cads = await req.json();
-        setCads(cads);
-      } catch (erro) {
-        console.log(erro.message);
+        const response = await fetch(url);
+        const data = await response.json();
+        setCads(data);
+        setFilteredCads(data); // Inicialmente, exibe todos os produtos
+      } catch (error) {
+        console.log("Erro ao carregar produtos:", error.message);
       }
     }
     fetchData();
   }, []);
 
+  // Atualizar os produtos exibidos com base na pesquisa
+  useEffect(() => {
+    const filtered = cads.filter((produto) =>
+      produto.nome.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredCads(filtered);
+  }, [searchTerm, cads]);
+
   return (
     <div style={{ height: "220vh", background: "#ffcbdb" }}>
-      <NavBarra />
+      <NavBarra setSearchTerm={setSearchTerm} />
       <h1 style={{ margin: "50px", color: "black" }}>Bolos</h1>
       <div className="container">
         <div className="lista-produtos d-flex gap-3 mt-3 justify-content-start flex-wrap col-12">
-          {cads.map((prod) => (
+          {filteredCads.map((prod) => (
             <CardProduto
               key={prod.id}
               id={prod.id}

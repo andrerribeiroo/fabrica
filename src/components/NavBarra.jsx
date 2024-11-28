@@ -4,18 +4,13 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { useNavigate } from "react-router-dom";
 
-const NavBarra = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // Estado para o termo de busca
-  const navigate = useNavigate();
+const NavBarra = ({ setSearchTerm }) => {
+  const [inputValue, setInputValue] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchTerm.trim() !== "") {
-      // Redireciona para a página de resultados com o termo na URL
-      navigate(`/produtos?search=${encodeURIComponent(searchTerm)}`);
-    }
+    setSearchTerm(inputValue); // Atualiza o termo de pesquisa no componente pai
   };
 
   return (
@@ -36,12 +31,12 @@ const NavBarra = () => {
           </Nav>
           <Form className="d-flex" onSubmit={handleSearch}>
             <Form.Control
-              type="Search"
+              type="search"
               placeholder="Procurar"
               className="me-2"
               aria-label="Search"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)} // Atualiza o estado com o termo
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
             />
             <Button variant="outline-success" type="submit">
               Procurar
