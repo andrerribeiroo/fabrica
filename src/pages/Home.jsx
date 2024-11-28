@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <div style={{ height: "220vh", background: "#ffcbdb"}}>
       <NavBarra />
-      <h1 style={{ margin: "50px", color: "black" }}>Lista de produtos</h1>
+      <h1 style={{ margin: "50px", color: "black" }}>Bolos</h1>
       <div className="container">
         <div className="lista-produtos d-flex gap-3 mt-3 justify-content-start flex-wrap col-12">
           {cads.map((prod) => (
@@ -42,7 +42,7 @@ const Home = () => {
               nome={prod.nome}
               descricao={prod.descricao}
               preco={prod.preco}
-              categoria={prod.categoria}
+              Tipo={prod.Tipo}
               imagemUrl={prod.imagemUrl}
             />
           ))}

@@ -18,7 +18,7 @@ const NavBarra = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Cadastrar Produto</Nav.Link>
+            <Nav.Link href="/produto/cadastrar">Cadastrar Produto</Nav.Link>
             <Nav.Link href="/login" style={{ color: "red"}}>SAIR</Nav.Link>
 
           </Nav>

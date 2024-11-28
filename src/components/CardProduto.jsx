@@ -38,7 +38,7 @@ const CardProduto = (props) => {
         </Card.Text>
 
         <Card.Text>
-            <b> Categoria: </b> <br></br> {props.categoria}
+            <b> Tipo: </b> <br></br> {props.Tipo}
           </Card.Text>
 
         <Card.Link href={`/produto/editar/${props.id}`}>
