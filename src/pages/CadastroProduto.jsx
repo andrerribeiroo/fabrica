@@ -99,7 +99,7 @@ const CadastroProduto = () => {
   };
 
   return (
-    <div style={{ background: "#ffcbdb" }}>
+    <div style={{minHeight: "100vh", background: "#ffcbdb" }}>
       <NavBarra />
       <Container>
         <h1 style={{ margin: "50px" }}>Cadastrar Produtos</h1>
