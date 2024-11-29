@@ -9,15 +9,15 @@ const CardProduto = (props) => {
     });
     const res = await req.json();
     console.log(res);
-    alert(`Produto ${res.nome} removido`);
+    alert(`Produto ${res.nome} removido com sucesso 😍`);
   };
 
   return (
     <div>
-      <Card style={{ width: "22rem", height: "30rem", margin: "30px" }}>
+      <Card style={{ width: "22rem", height: "30rem", margin: "30px", border: "2px solid black", boxShadow: "0px 0px 50px black"}}>
         {/* Imagem do Card */}
 
-        <Card.Img variant="top" src={props.imagemUrl} height="200px" />
+        <Card.Img variant="end" src={props.imagemUrl} height="200px" style={{borderBottom: "1px solid black"}} />
         <Card.Body>
           {/* Título do card com nome do produto */}
 
@@ -33,7 +33,7 @@ const CardProduto = (props) => {
           </Card.Text>
 
           <Card.Link href={`/produto/editar/${props.id}`}>
-            <Button variant="warning">Editar</Button>
+            <Button variant="primary">Editar</Button>
           </Card.Link>
 
           <Card.Link href="/home">

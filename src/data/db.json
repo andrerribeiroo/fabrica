@@ -23,6 +23,12 @@
       "nome": "angelo",
       "email": "angelo@gmail.com",
       "senha": "angelo"
+    },
+    {
+      "id": "2fee",
+      "nome": "Arthur",
+      "email": "Arthur@gmail.com",
+      "senha": "Arthur"
     }
   ],
   "produtos": [
@@ -48,7 +54,7 @@
       "id": "5e8d"
     },
     {
-      "nome": "Bolo de cenoura",
+      "nome": "Bolo de LAJOTAKKKJ",
       "preco": "11",
       "tipo": "Bolo",
       "imagemUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIjNigTtPOin2C80n_PEGQS_PA_1xHKuOM3w&s",

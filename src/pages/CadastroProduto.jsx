@@ -125,6 +125,40 @@ const CadastroProduto = () => {
         <form onSubmit={handleSubmit} className="mt-3">
           <Row className="mb-3">
             <Col xs={6}>
+              
+
+              {/* Caixinha de Imagem*/}
+
+              <Form.Group controlId="formFileLg" className="mb-3">
+                <FloatingLabel
+                  controlId="floatingInputImagem"
+                  label="Envie o link da IMAGEM !"
+                  className="mb-3"
+                >
+                  <Form.Control
+                    type="Text"
+                    placeholder="Envie o link da IMAGEM do produto"
+                    value={imagemUrl}
+                    onChange={(e) => {
+                      setImagemUrl(e.target.value);
+                    }}
+                  />
+                </FloatingLabel>
+
+                <Image
+                  src={imagemUrl == "" ? linkImagem : imagemUrl}
+                  rounded
+                  width={630}
+                  height={600}
+                  style={{
+                    boxShadow:
+                      "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06)",
+                  }}
+                />
+              </Form.Group>
+            </Col>
+
+            <Col xs={6}>
               {/* Caixinha de Nome */}
               <FloatingLabel
                 controlId="floatingInputNome"
@@ -180,38 +214,6 @@ const CadastroProduto = () => {
                   }}
                 />
               </FloatingLabel>
-            </Col>
-
-            <Col xs={6}>
-              {/* Caixinha de Imagem*/}
-
-              <Form.Group controlId="formFileLg" className="mb-3">
-                <FloatingLabel
-                  controlId="floatingInputImagem"
-                  label="Envie o link da IMAGEM !"
-                  className="mb-3"
-                >
-                  <Form.Control
-                    type="Text"
-                    placeholder="Envie o link da IMAGEM do produto"
-                    value={imagemUrl}
-                    onChange={(e) => {
-                      setImagemUrl(e.target.value);
-                    }}
-                  />
-                </FloatingLabel>
-
-                <Image
-                  src={imagemUrl == "" ? linkImagem : imagemUrl}
-                  rounded
-                  width={300}
-                  height={300}
-                  style={{
-                    boxShadow:
-                      "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06)",
-                  }}
-                />
-              </Form.Group>
             </Col>
           </Row>
 

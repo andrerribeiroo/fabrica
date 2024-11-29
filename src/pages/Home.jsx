@@ -35,9 +35,10 @@ const Home = () => {
   }, [searchTerm, cads]);
 
   return (
-    <div style={{ height: "250vh", background: "#ffcbdb" }}>
+    <div style={{background: "#ffcbdb" }}>
       <NavBarra setSearchTerm={setSearchTerm} />
-      <h1 style={{ margin: "50px", color: "black" }}>Bolos</h1>
+      <img src="1920.png" style={{ height: "350px", width: "100%"}} alt="" />
+      <h1 style={{ margin: "50px", color: "black" }}>Nossos Produtos</h1>
       <div className="container">
         <div className="lista-produtos d-flex gap-3 mt-3 justify-content-start flex-wrap col-12">
           {filteredCads.map((prod) => (
