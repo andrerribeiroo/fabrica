@@ -29,6 +29,18 @@
       "nome": "Arthur",
       "email": "Arthur@gmail.com",
       "senha": "Arthur"
+    },
+    {
+      "id": "dbf4",
+      "nome": "gb",
+      "email": "gb@gmail.com",
+      "senha": "gb"
+    },
+    {
+      "id": "8de9",
+      "nome": "g",
+      "email": "g@gmail.com",
+      "senha": "g"
     }
   ],
   "produtos": [
